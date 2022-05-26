@@ -1,0 +1,33 @@
+#!/bin/sh
+# making directories
+mkdir -p ~/dl ~/mc ~/repos ~/.cache/zsh
+# cloning the dotfiles repo to ~/.config
+git clone https://github.com/71zenith/dotfiles.git ~/.config
+# cloning the scripts repo to ~/.local
+git clone https://github.com/71zenith/scripts.git ~/.local/
+# cloning a bunch of repo
+cd ~/repos
+git clone https://github.com/71zenith/archinstall
+git clone https://github.com/71zenith/71zenith profile
+git clone https://github.com/71zenith/71zenith.github.io startpage
+# setting prompt
+cd ~/
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git --depth=1 ~/.config/zsh/spaceship/
+ln -sf /home/zen/.config/zsh/spaceship/spaceship.zsh /home/zen/.config/zsh/prompt_spaceship_setup
+# compiling clipmenu
+cd /tmp
+git clone https://github.com/cdown/clipmenu
+cd clipmenu
+doas install --target "/usr/local/bin" -D -m755 clipmenu clipmenud clipdel clipctl
+doas install -D -m644 init/clipmenud.service "/usr/lib/systemd/user/clipmenud.service"
+# setting up the origin for push
+cd ~/.config
+git remote set-url origin git@github.com:71zenith/dotfiles
+cd ~/.local
+git remote set-url origin git@github.com:71zenith/scripts
+cd ~/repos/profile
+git remote set-url origin git@github.com:71zenith/71zenith
+cd ~/repos/archinstall
+git remote set-url origin git@github.com:71zenith/archinstall
+cd ~/repos/startpage
+git remote set-url origin git@github.com:71zenith/71zenith.github.io
