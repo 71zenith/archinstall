@@ -20,7 +20,7 @@ mount /dev/sdb4 /mnt/home
 swapon /dev/sdb2
 
 # installing the base system
-pacstrap /mnt base bspwm git linux-lts man moc neovim networkmanager nvidia-lts opendoas playerctl pulseaudio pulseaudio-alsa pulsemixer openssh sxhkd terminus-font ttf-hanazono xorg-server xorg-xinit xorg-xprop xorg-xset xorg-xsetroot xwallpaper zathura-pdf-mupdf pop-gtk-theme pop-icon-theme xsel clipnotify ttf-joypixels discord dunst yt-dlp zip unzip mpv alacritty zsh bat ttf-iosevka-nerd firefox
+pacstrap /mnt base bspwm git linux-lts man moc neovim networkmanager nvidia-lts opendoas playerctl pulseaudio pulseaudio-alsa pulsemixer openssh sxhkd terminus-font ttf-hanazono xorg-server xorg-xinit xorg-xprop xorg-xset xorg-xsetroot xwallpaper zathura-pdf-mupdf pop-gtk-theme pop-icon-theme xsel clipnotify ttf-joypixels dunst yt-dlp zip unzip mpv alacritty zsh bat ttf-iosevka-nerd firefox calibre picom libbsd
 
 # generating the fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -34,5 +34,3 @@ curl -L https://github.com/71zenith/archinstall/raw/master/post > /mnt/post
 arch-chroot /mnt sh post
 # cleanup
 rm -rf /mnt/post
-# rebooting the system
-reboot
