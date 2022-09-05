@@ -20,7 +20,7 @@ mount /dev/sdb4 /mnt/home
 swapon /dev/sdb2
 
 # installing the base system
-pacstrap /mnt base bspwm git linux-lts man moc neovim networkmanager nvidia-lts opendoas playerctl pulseaudio pulseaudio-alsa pulsemixer openssh sxhkd terminus-font ttf-hanazono xorg-server xorg-xinit xorg-xprop xorg-xset xorg-xsetroot xwallpaper zathura-pdf-mupdf pop-gtk-theme pop-icon-theme xsel clipnotify ttf-joypixels dunst yt-dlp zip unzip mpv alacritty zsh bat ttf-iosevka-nerd firefox calibre picom libbsd
+pacstrap /mnt base bspwm git linux-lts man moc neovim networkmanager nvidia-lts opendoas playerctl pulseaudio pulseaudio-alsa pulsemixer openssh sxhkd terminus-font adobe-source-han-sans-jp-fonts xorg-server xorg-xinit xorg-xprop xorg-xset xorg-xsetroot xwallpaper zathura-pdf-mupdf pop-gtk-theme pop-icon-theme xsel clipnotify ttf-joypixels dunst yt-dlp zip unzip mpv alacritty zsh bat ttf-iosevka-nerd firefox calibre picom libbsd fcitx fcitx-mozc
 
 # generating the fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
