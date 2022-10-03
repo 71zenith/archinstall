@@ -18,7 +18,7 @@ echo "permit nopass :wheel" >> /etc/doas.conf
 ln -sfT /bin/doas /bin/sudo
 # setting up systemd-boot
 bootctl install
-echo -e "default arch.conf\ntimeout 0" > /boot/loader/loader.conf
+echo -e "default arch.conf\ntimeout 10" > /boot/loader/loader.conf
 echo -e "title   Arch Linux\nlinux   /vmlinuz-linux-lts\ninitrd  /initramfs-linux-lts.img\noptions root=\"LABEL=Arch\" resume=\"LABEL=Swap\" rw" > /boot/loader/entries/arch.conf
 # setting ZDOTDIR
 echo "ZDOTDIR=/home/zen/.config/zsh" >> /etc/environment
